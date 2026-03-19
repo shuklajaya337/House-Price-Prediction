@@ -135,27 +135,13 @@ st.markdown("""
 
 
 # ─── Load & Train Model (cached) ─────────────────────────────────────────────
-DATASET_URL = (
-    "https://raw.githubusercontent.com/ageron/handson-ml2/master/"
-    "datasets/housing/housing.csv"
-)
-
 @st.cache_data
 def load_and_train():
-    # Try local file first, then auto-download from public mirror
-    # (same dataset & columns as the Kaggle California Housing Prices dataset)
     try:
         data = pd.read_csv("housing_new.csv")
     except FileNotFoundError:
-        try:
-            import urllib.request
-            with st.spinner("📥 Downloading California Housing dataset from public source..."):
-                urllib.request.urlretrieve(DATASET_URL, "housing_new.csv")
-            data = pd.read_csv("housing_new.csv")
-            st.success("✅ Dataset downloaded successfully!")
-        except Exception as e:
-            st.error(f"❌ Could not download dataset: {e}")
-            st.stop()
+        st.error("⚠️ `housing_new.csv` not found. Please ensure the uploaded dataset file is in the same folder as `main.py` or committed to your GitHub repo.")
+        st.stop()
 
     # Clean
     data.dropna(inplace=True)
