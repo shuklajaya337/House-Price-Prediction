@@ -3,7 +3,7 @@
 An interactive machine learning web application that predicts California house prices based on property features.
 
 ## 🚀 Live Demo
-[👉 Click here to open the Live App](https://shuklajaya337-house-price-prediction.streamlit.app/)
+[👉 Click here to open the Live App](YOUR_STREAMLIT_APP_URL_HERE)
 
 ## 📸 Features
 - 🔮 **Real-time price prediction** using a trained Random Forest model
