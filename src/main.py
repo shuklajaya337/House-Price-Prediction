@@ -7,8 +7,10 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
+import os
 import warnings
 warnings.filterwarnings("ignore")
+
 
 # ─── Page Config ─────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -137,10 +139,26 @@ st.markdown("""
 # ─── Load & Train Model (cached) ─────────────────────────────────────────────
 @st.cache_data
 def load_and_train():
+    possible_paths = [
+        "data/housing_new.csv",
+        "../data/housing_new.csv",
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "housing_new.csv"),
+        "housing_new.csv"
+    ]
+    data_path = None
+    for p in possible_paths:
+        if os.path.exists(p):
+            data_path = p
+            break
+
+    if data_path is None:
+        st.error("⚠️ `housing_new.csv` not found. Please ensure it is in the `data/` folder.")
+        st.stop()
+
     try:
-        data = pd.read_csv("housing_new.csv")
-    except FileNotFoundError:
-        st.error("⚠️ `housing_new.csv` not found. Please ensure the uploaded dataset file is in the same folder as `main.py` or committed to your GitHub repo.")
+        data = pd.read_csv(data_path)
+    except Exception as e:
+        st.error(f"⚠️ Error loading data: {e}")
         st.stop()
 
     # Clean

@@ -1,0 +1,33 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+myenv/
+
+# IDE files
+.vscode/
+.idea/
+
+# Streamlit config and caches
+.streamlit/
+*.pkl
+*.joblib
+models/
+
+# Testing caches
+.pytest_cache/
+.coverage
+htmlcov/
