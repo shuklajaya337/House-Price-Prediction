@@ -5,7 +5,7 @@ An interactive machine learning web application that predicts California house p
 ![Dashboard Screenshot](images/dashboard_mockup.png)
 
 ## 🚀 Live Demo
-[👉 Click here to open the Live App](https://house-price-prediction-fqhnhahemggfrdirgq6atj.streamlit.app/)
+[👉 Click here to open the Live App](https://house-price-prediction-4gndjxxfnmnd5nwd4rf8vf.streamlit.app/)
 
 ## 📸 Features
 - 🔮 **Real-time price prediction** using a trained Random Forest model

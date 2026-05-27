@@ -155,7 +155,7 @@ st.markdown("""
 
 
 # ─── Load & Train Model (cached) ─────────────────────────────────────────────
-@st.cache_data
+@st.cache_resource
 def load_and_train():
     possible_paths = [
         "data/housing_new.csv",
