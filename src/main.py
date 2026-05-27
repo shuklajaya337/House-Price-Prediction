@@ -155,7 +155,7 @@ st.markdown("""
 
 
 # ─── Load & Train Model (cached) ─────────────────────────────────────────────
-@st.cache_resource
+@st.cache_data
 def load_and_train():
     possible_paths = [
         "data/housing_new.csv",
@@ -170,14 +170,12 @@ def load_and_train():
             break
 
     if data_path is None:
-        st.error("⚠️ `housing_new.csv` not found. Please ensure it is in the `data/` folder.")
-        st.stop()
+        return None, None, None, None, None, None, None, None, None
 
     try:
         data = pd.read_csv(data_path)
     except Exception as e:
-        st.error(f"⚠️ Error loading data: {e}")
-        st.stop()
+        return None, None, None, None, None, None, None, None, None
 
     # Clean
     data.dropna(inplace=True)
@@ -200,7 +198,7 @@ def load_and_train():
     X_test_sc  = scaler.transform(X_test)
 
     # Model
-    model = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1)
+    model = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=1)
     model.fit(X_train_sc, y_train)
 
     y_pred = model.predict(X_test_sc)
@@ -211,6 +209,10 @@ def load_and_train():
 
 
 model, scaler, feature_cols, X_test, y_test, y_pred, rmse, r2, data = load_and_train()
+
+if model is None:
+    st.error("⚠️ `housing_new.csv` not found. Please ensure the `data/` folder is present.")
+    st.stop()
 
 
 # ─── Sidebar ──────────────────────────────────────────────────────────────────
