@@ -4,6 +4,8 @@ An interactive machine learning web application that predicts California house p
 
 ![Dashboard Screenshot](images/dashboard_mockup.png)
 
+[![Open Live App](https://img.shields.io/badge/🚀%20Live%20Demo-Click%20to%20Open%20App-8b5cf6?style=for-the-badge)](https://house-price-prediction-4gndjxxfnmnd5nwd4rf8vf.streamlit.app/)
+
 ## 🚀 Live Demo
 [👉 Click here to open the Live App](https://house-price-prediction-4gndjxxfnmnd5nwd4rf8vf.streamlit.app/)
 
