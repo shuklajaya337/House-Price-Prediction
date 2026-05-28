@@ -33,7 +33,6 @@ House-Price-Prediction/
 │   └── dashboard_mockup.png # Visualization screenshot
 ├── .gitignore          # Git ignore file
 ├── Dockerfile          # Container configuration
-├── LICENSE             # MIT License
 ├── CONTRIBUTING.md     # Development setup guide
 ├── README.md           # Project documentation
 └── requirements.txt    # Python dependencies
