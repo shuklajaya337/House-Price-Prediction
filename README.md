@@ -23,8 +23,6 @@ House-Price-Prediction/
 │       └── ci.yml      # CI/CD test workflow
 ├── data/
 │   └── housing_new.csv # Dataset (California Housing)
-├── src/
-│   └── main.py         # Streamlit web app source code
 ├── notebooks/
 │   └── HousePricePredictionProject.ipynb # Experimentation notebook
 ├── tests/
@@ -33,7 +31,6 @@ House-Price-Prediction/
 │   └── dashboard_mockup.png # Visualization screenshot
 ├── .gitignore          # Git ignore file
 ├── Dockerfile          # Container configuration
-├── CONTRIBUTING.md     # Development setup guide
 ├── README.md           # Project documentation
 └── requirements.txt    # Python dependencies
 ```
