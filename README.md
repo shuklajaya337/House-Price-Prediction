@@ -1,7 +1,7 @@
 # 🏠 House Price Prediction App
 
 An interactive machine learning web application that predicts California house prices based on property features.
-<img src="images/dashboard_mockup.png" alt="Dashboard Screenshot" width="550" />
+<img src="images/dashboard_mockup.png" alt="Dashboard Screenshot" width="400" />
 
 [![Open Live App](https://img.shields.io/badge/🚀%20Live%20Demo-Click%20to%20Open%20App-8b5cf6?style=for-the-badge)](https://house-price-prediction-4gndjxxfnmnd5nwd4rf8vf.streamlit.app/)
 
